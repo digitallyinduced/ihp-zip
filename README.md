@@ -10,7 +10,7 @@
         haskellEnv = import "${ihp}/NixSupport/default.nix" {
             ihp = ihp;
             haskellDeps = p: with p; [
-                ...
+                # ...
                 ihp-zip
                 zip-archive
             ];
