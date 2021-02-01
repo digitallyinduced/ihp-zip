@@ -24,7 +24,7 @@
     , module Application.Helper.Controller
     , module IHP.ControllerPrelude
     , module Generated.Types
-    , IHP.Zip.ControllerFunctions -- <------- ADD THIS EXPORT
+    , module IHP.Zip.ControllerFunctions -- <------- ADD THIS EXPORT
     )
     where
 
