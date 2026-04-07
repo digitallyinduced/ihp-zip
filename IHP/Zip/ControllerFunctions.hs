@@ -28,7 +28,7 @@ import qualified Codec.Archive.Zip as Zip
 -- If you don't care about the downloaded file name, use 'renderZipUnnamed'.
 --
 -- See https://hackage.haskell.org/package/zip-archive-0.4.1/docs/Codec-Archive-Zip.html for full reference of how build a zip archive
-renderZip :: (?context :: ControllerContext) => Text -> Zip.Archive -> IO ()
+renderZip :: (?context :: ControllerContext, ?request :: Request, ?respond :: Respond) => Text -> Zip.Archive -> IO ()
 renderZip filename archive = respondAndExit $ responseLBS status200 headers (archive |> Zip.fromArchive)
     where
         contentType = (hContentType, "application/zip")
@@ -53,7 +53,7 @@ renderZip filename archive = respondAndExit $ responseLBS status200 headers (arc
 -- To name the downloaded file, use 'renderZip'.
 --
 -- See https://hackage.haskell.org/package/zip-archive-0.4.1/docs/Codec-Archive-Zip.html for full reference of how build a zip archive
-renderZipUnnamed :: (?context :: ControllerContext) => Zip.Archive -> IO ()
+renderZipUnnamed :: (?context :: ControllerContext, ?request :: Request, ?respond :: Respond) => Zip.Archive -> IO ()
 renderZipUnnamed archive = respondAndExit $ responseLBS status200 headers (archive |> Zip.fromArchive)
     where
         contentType = (hContentType, "application/zip")
