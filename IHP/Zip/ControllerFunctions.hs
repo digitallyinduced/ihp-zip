@@ -4,7 +4,6 @@ module IHP.Zip.ControllerFunctions
 ) where
 
 import IHP.Prelude
-import IHP.Controller.Context
 import IHP.ControllerSupport
 import Network.Wai
 import Network.HTTP.Types
