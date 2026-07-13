@@ -60,5 +60,3 @@ renderZipUnnamed archive = respondAndExit $ responseLBS status200 headers (archi
 
         headers :: ResponseHeaders
         headers = [ contentType, contentDisposition ]
-
-hContentDisposition = "Content-Disposition"
